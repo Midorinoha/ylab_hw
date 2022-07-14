@@ -15,26 +15,13 @@ class GeneralAttacks(ABC):
     def roundhouse_kick(self):
         pass
 
-class Heros(ABC):
+class SuperHero(Heros, GeneralAttacks):
+    
     def __init__(self, name, can_use_ultimate_attack=False):
         self.name = name
         self.can_use_ultimate_attack = can_use_ultimate_attack
         self.finder = AntagonistFinder()
-    
-    @abstractmethod
-    def find(self, place):
-        pass
-
-    @abstractmethod
-    def attack(self):
-        pass
-
-    @abstractmethod
-    def ultimate(self):
-        pass
-    
-class SuperHero(Heros, GeneralAttacks):
-
+        
     def find(self, place):
         self.finder.get_antagonist(place)
 
