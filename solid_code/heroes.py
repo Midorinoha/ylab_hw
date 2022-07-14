@@ -15,7 +15,7 @@ class GeneralAttacks(ABC):
     def roundhouse_kick(self):
         pass
 
-class SuperHero(Heros, GeneralAttacks):
+class SuperHero(GeneralAttacks):
     
     def __init__(self, name, can_use_ultimate_attack=False):
         self.name = name
